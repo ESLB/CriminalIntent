@@ -9,8 +9,11 @@ import com.bignerdranch.android.criminalintent.fragments.SingleFragmentActivity;
 
 import java.util.UUID;
 
-//Bine, esta es la activity en la que vamos a hostear al fragment del crime
-
+//Bien, esta es la activity en la que vamos a hostear al fragment del crime
+/*
+Todo Estamos en el capítulo 15 Implicit Intents
+Todo Son 33 capítulos, así que tenemos que repasar y apurarnos para hacerlo bien
+ */
 public class CrimeActivity extends SingleFragmentActivity {
 
     //Para el extra
