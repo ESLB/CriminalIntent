@@ -33,12 +33,13 @@ public class CrimeListFragment extends Fragment {
     //Para el RecyclerView
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
+
     //Para manejar el Toolbar
     private boolean mSubtitleVisible;
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
 
     @Override
-    public void onCreate(Bundle savedInstanceState){
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Con esto y el theme que escogimos le decimos al fragment que el toolbar tiene Opciones
         setHasOptionsMenu(true);
@@ -118,7 +119,6 @@ public class CrimeListFragment extends Fragment {
 
         @Override
         public void onClick(View view) {
-
             Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
             startActivity(intent);
         }
@@ -181,6 +181,13 @@ public class CrimeListFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
+    }
+
+
     //Las siguientes tres funciones sirven para manejar el toolbar
     //####################################################################
     @Override
@@ -231,9 +238,5 @@ public class CrimeListFragment extends Fragment {
     }
     //######################################################################
 
-    @Override
-    public void onResume(){
-        super.onResume();
-        updateUI();
-    }
+
 }

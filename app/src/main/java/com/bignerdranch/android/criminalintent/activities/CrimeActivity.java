@@ -12,6 +12,9 @@ import java.util.UUID;
 //Bien, esta es la activity en la que vamos a hostear al fragment del crime
 /*
 Todo Estamos en el capítulo 15 Implicit Intents
+Bien, ya terminamos el capítulo 15, podemos usar Intent más o menos monces, pero no importa
+También podemos usar los implicit intent con la aplicación de llamada telefónica 12/01/2018
+
 Todo Son 33 capítulos, así que tenemos que repasar y apurarnos para hacerlo bien
  */
 public class CrimeActivity extends SingleFragmentActivity {

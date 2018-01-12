@@ -34,6 +34,7 @@ public class CrimeLab {
         return sCrimeLab;
     }
 
+
     //El constructor privado
     //Le da un contexto a la instanciación y crea el objeto para que podamos acceder a la base de datos
     private CrimeLab(Context context) {
@@ -41,10 +42,12 @@ public class CrimeLab {
         mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
     }
 
+
     public void addCrime(Crime c){
         ContentValues values = getContentValues(c);
         mDatabase.insert(CrimeTable.NAME, null, values);
     }
+
 
     public List<Crime> getCrimes(){
 
@@ -67,6 +70,7 @@ public class CrimeLab {
         return crimes;
     }
 
+
     public Crime getCrime(UUID id){
 
         //Aquí hacemos una peticion a la base de datos, notar cómo está implementado CrimeCursorWrapper
@@ -87,12 +91,14 @@ public class CrimeLab {
         }
     }
 
+
     public void updateCrime(Crime crime){
         String uuidString = crime.getId().toString();
         ContentValues values = getContentValues(crime);
 
         mDatabase.update(CrimeTable.NAME, values, Cols.UUID + " = ?", new String[]{uuidString});
     }
+
 
     //Con esto estamos transmitiendo todos los datos de un Crime en un ContentValues, que luego
     //nos servirá para guardar los datos en la base de datos. De este modo es más sencillo
@@ -102,13 +108,14 @@ public class CrimeLab {
         values.put(Cols.TITLE, crime.getTitle());
         values.put(Cols.DATE, crime.getDate().getTime());
         values.put(Cols.SOLVED, crime.isSolved() ? 1 : 0);
-
+        values.put(Cols.SUSPECT, crime.getSuspect());
         return values;
     }
 
     //Aquí estamos primero creando un cursos que obtenga los datos de la base de datos
     //Luego, con ese cursor creamos un CrimeCursorWrapper, que nos hace el trabajo de obtener datos
     //del Cursor más sencillo
+
     private CrimeCursorWrapper queryCrimes(String whereClause, String[] whereArgs)
     {
         Cursor cursor = mDatabase.query(
@@ -123,6 +130,7 @@ public class CrimeLab {
 
         return new CrimeCursorWrapper(cursor);
     }
+
 
     //TODO Tenemos que implementar el método para borrar un crime de la base de datos
     public void eraseCrime(UUID id) {
