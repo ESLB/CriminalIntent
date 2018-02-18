@@ -11,8 +11,7 @@ import java.util.UUID;
 
 //Bien, esta es la activity en la que vamos a hostear al fragment del crime
 /*
-Todo Estamos en el capítulo 15 Implicit Intents
-Todo Son 33 capítulos, así que tenemos que repasar y apurarnos para hacerlo bien
+Todo Estamos en el capítulo 15 Implicit Intents,
  */
 public class CrimeActivity extends SingleFragmentActivity {
 

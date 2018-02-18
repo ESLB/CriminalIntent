@@ -14,6 +14,7 @@ public class Crime {
     private String mTitle;
     private Date mDate;
     private boolean mSolved;
+    private String mSuspect;
 
     public Crime(){
         //Generate unique identifies
@@ -60,5 +61,13 @@ public class Crime {
     }
     public void setSolved(boolean solved){
         mSolved = solved;
+    }
+
+    public String getmSuspect() {
+        return mSuspect;
+    }
+
+    public void setmSuspect(String mSuspect) {
+        this.mSuspect = mSuspect;
     }
 }

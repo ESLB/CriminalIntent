@@ -81,6 +81,12 @@ public class CrimeListFragment extends Fragment {
         updateSubtitle();
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        updateUI();
+    }
+
     //El Holder se encarga de proporcionar un itemView para que luego
     //el Adapter lo una con el Layout
     //Al parecer, aquí se tienen que manejar todas las reacciones que deben ocurrir al presionar un botón
@@ -141,6 +147,8 @@ public class CrimeListFragment extends Fragment {
     //unimos los Crimes con los Holder
     //y por último, informamos cuántos items tenemos actualmente en este adapter
     //Nota: Cuando estos el número de items cambia, se debe llamar la funciones del adapter NotifyItemsSetChanged
+
+
     private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder>{
 
         private List<Crime> mCrimes;
@@ -231,9 +239,5 @@ public class CrimeListFragment extends Fragment {
     }
     //######################################################################
 
-    @Override
-    public void onResume(){
-        super.onResume();
-        updateUI();
-    }
+
 }
